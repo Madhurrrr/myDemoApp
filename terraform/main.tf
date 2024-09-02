@@ -22,15 +22,15 @@ provider "azurerm" {
   subscription_id = "b6ab4036-6f78-4352-8509-74b8f3e9eef2"
 }
 
-resource "azurerm_resource_group" "rgsa" {
-  name     = "aks-resource-group"
+resource "azurerm_resource_group" "rgsa1" {
+  name     = "aks-resource-group2"
   location = "central US"
 }
 
-resource "azurerm_kubernetes_cluster" "aks" {
-  name                = "aks-cluster"
-  location            = azurerm_resource_group.rgsa.location
-  resource_group_name = azurerm_resource_group.rgsa.name
+resource "azurerm_kubernetes_cluster" "aks1" {
+  name                = "aks-cluster-93"
+  location            = azurerm_resource_group.rgsa1.location
+  resource_group_name = azurerm_resource_group.rgsa1.name
   dns_prefix          = "akscluster"
 
   default_node_pool {
@@ -49,6 +49,6 @@ resource "azurerm_kubernetes_cluster" "aks" {
 }
 
 output "kubeconfig" {
-  value = azurerm_kubernetes_cluster.aks.kube_config_raw
+  value = azurerm_kubernetes_cluster.aks1.kube_config_raw
   sensitive = true
 }
