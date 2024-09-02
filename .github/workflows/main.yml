@@ -60,7 +60,7 @@ name: Deploy AKS using Terraform
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   terraform:
