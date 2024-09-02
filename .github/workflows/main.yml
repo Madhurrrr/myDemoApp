@@ -15,13 +15,13 @@ jobs:
       run:
         shell: bash
 
-    name: Set Terraform Variables
-    env:
-      AZURE_CREDENTIALS: ${{ secrets.AZURE_CREDENTIALS }}
-      ARM_CLIENT_ID: ${{secrets.ARM_CLIENT_ID}}
-      ARM_CLIENT_SECRET: ${{secrets.ARM_CLIENT_SECRET}}
-      ARM_SUBSCRIPTION_ID: ${{secrets.ARM_SUBSCRIPTION_ID}}
-      ARM_TENANT_ID: ${{secrets.ARM_TENANT_ID}}
+#    name: Set Terraform Variables
+#    env:
+#      AZURE_CREDENTIALS: ${{ secrets.AZURE_CREDENTIALS }}
+#      ARM_CLIENT_ID: ${{secrets.ARM_CLIENT_ID}}
+#      ARM_CLIENT_SECRET: ${{secrets.ARM_CLIENT_SECRET}}
+#      ARM_SUBSCRIPTION_ID: ${{secrets.ARM_SUBSCRIPTION_ID}}
+#      ARM_TENANT_ID: ${{secrets.ARM_TENANT_ID}}
 
     steps:
       - name: Checkout code
