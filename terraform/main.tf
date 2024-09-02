@@ -2,15 +2,15 @@ provider "azurerm" {
   features {}
 }
 
-resource "azurerm_resource_group" "terraformDemo" {
+resource "azurerm_resource_group" "teraformDemo" {
   name     = "aks-resource-group"
   location = "East US"
 }
 
 resource "azurerm_kubernetes_cluster" "aks" {
   name                = "aks-cluster"
-  location            = azurerm_resource_group.terraformDemo.location
-  resource_group_name = azurerm_resource_group.terraformDemo.name
+  location            = azurerm_resource_group.teraformDemo.location
+  resource_group_name = azurerm_resource_group.teraformDemo.name
   dns_prefix          = "akscluster"
 
   default_node_pool {

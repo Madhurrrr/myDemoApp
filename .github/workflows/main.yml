@@ -64,6 +64,7 @@ on:
 
 jobs:
   terraform:
+    runs-on: ubuntu-latest
     name: Set Terraform Variables
     env:
       AZURE_CREDENTIALS: ${{ secrets.AZURE_CREDENTIALS }}
@@ -71,7 +72,7 @@ jobs:
       ARM_CLIENT_SECRET: ${{secrets.ARM_CLIENT_SECRET}}
       ARM_SUBSCRIPTION_ID: ${{secrets.ARM_SUBSCRIPTION_ID}}
       ARM_TENANT_ID: ${{secrets.ARM_TENANT_ID}}
-    runs-on: ubuntu-latest
+
 
     steps:
       - name: Checkout repository
@@ -79,8 +80,6 @@ jobs:
 
       - name: Set up Terraform
         uses: hashicorp/setup-terraform@v1
-        with:
-          terraform_version: 1.0.0
 
 #      - name: Azure login
 #        uses: azure/login@v1
