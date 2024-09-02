@@ -1,19 +1,19 @@
-#terraform {
-#  required_version = ">= 0.14"
-#
-#  required_providers {
-#    azurerm = {
-#      source  = "hashicorp/azurerm"
-#      version = ">= 2.0"
-#    }
-#  }
-#  backend "azurerm" {
-#    resource_group_name = "teraformDemo"
-#    storage_account_name = "tfstract"
-#    container_name = "tfcontainer"
-#    key="teraform.tfstate"
-#  }
-#}
+terraform {
+  required_version = ">= 0.14"
+
+  required_providers {
+    azurerm = {
+      source  = "hashicorp/azurerm"
+      version = ">= 2.0"
+    }
+  }
+  backend "azurerm" {
+    resource_group_name = "teraformDemo"
+    storage_account_name = "tfstract"
+    container_name = "tfcontainer"
+    key="teraform.tfstate"
+  }
+}
 provider "azurerm" {
   features {}
   tenant_id = "00f80d0c-aac1-4ef7-b535-18de0600df3c"
@@ -24,7 +24,7 @@ provider "azurerm" {
 
 resource "azurerm_resource_group" "rgsa" {
   name     = "aks-resource-group"
-  location = "East US"
+  location = "central US"
 }
 
 resource "azurerm_kubernetes_cluster" "aks" {
