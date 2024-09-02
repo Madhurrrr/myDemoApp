@@ -16,6 +16,7 @@
 #}
 provider "azurerm" {
   features {}
+  tenant_id = "00f80d0c-aac1-4ef7-b535-18de0600df3c"
 }
 
 resource "azurerm_resource_group" "rgsa" {

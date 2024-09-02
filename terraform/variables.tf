@@ -9,3 +9,9 @@ variable "client_secret" {
   type =string
   default = "Ess8Q~6UcWfsqQf2VmT~z3CMEAeNSBPjPG0S3bVK"
 }
+
+variable "tenent_id" {
+ description = "Ess8Q~6UcWfsqQf2VmT~z3CMEAeNSBPjPG0S3bVK"
+ type =string
+ default = "00f80d0c-aac1-4ef7-b535-18de0600df3c"
+}
