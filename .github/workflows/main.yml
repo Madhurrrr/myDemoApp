@@ -82,18 +82,18 @@ jobs:
         with:
           terraform_version: 1.0.0
 
-      - name: Azure login
-        uses: azure/login@v1
-        with:
-          creds: ${{ secrets.AZURE_CREDENTIALS }}
+#      - name: Azure login
+#        uses: azure/login@v1
+#        with:
+#          creds: ${{ secrets.AZURE_CREDENTIALS }}
 
       - name: Terraform Init
         run: terraform init
         working-directory: ./terraform
 
-      - name: Terraform Plan
-        run: terraform plan
-        working-directory: ./terraform
+#      - name: Terraform Plan
+#        run: terraform plan
+#        working-directory: ./terraform
 
       - name: Terraform Apply
         run: terraform apply -auto-approve
