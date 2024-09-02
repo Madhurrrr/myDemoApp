@@ -7,12 +7,12 @@ terraform {
       version = ">= 2.0"
     }
   }
-  backend "azurerm" {
-    resource_group_name = "teraformDemo"
-    storage_account_name = "tfstract"
-    container_name = "tfcontainer"
-    key="teraform.tfstate"
-  }
+#  backend "azurerm" {
+#    resource_group_name = "teraformDemo"
+#    storage_account_name = "tfstract"
+#    container_name = "tfcontainer"
+#    key="teraform.tfstate"
+#  }
 }
 provider "azurerm" {
   features {}
