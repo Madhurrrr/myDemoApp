@@ -8,9 +8,9 @@ terraform {
     }
   }
   backend "azurerm" {
-    resource_group_name = "testResource"
-    storage_account_name = "testAccount"
-    container_name = "tfstate01"
+    resource_group_name = "teraformDemo"
+    storage_account_name = "tfstract"
+    container_name = "tfcontainer"
     key="teraform.tfstate"
   }
 }
@@ -18,15 +18,15 @@ provider "azurerm" {
   features {}
 }
 
-resource "azurerm_resource_group" "teraformDemo" {
+resource "azurerm_resource_group" "rgsa" {
   name     = "aks-resource-group"
   location = "East US"
 }
 
 resource "azurerm_kubernetes_cluster" "aks" {
   name                = "aks-cluster"
-  location            = azurerm_resource_group.teraformDemo.location
-  resource_group_name = azurerm_resource_group.teraformDemo.name
+  location            = azurerm_resource_group.rgsa.location
+  resource_group_name = azurerm_resource_group.rgsa.name
   dns_prefix          = "akscluster"
 
   default_node_pool {
