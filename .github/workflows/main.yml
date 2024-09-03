@@ -45,8 +45,8 @@ jobs:
 
       - name: Build and push Docker image
         run: |
-          docker build -t madhurt4007/myDemoApp:latest1 .
-          docker push madhurt4007/myDemoApp:latest1
+          docker build -t madhurt4007/mydemoapp:latest1 .
+          docker push madhurt4007/mydemoapp:latest1
 
       - name: Terraform Init
         working-directory: ./terraform
