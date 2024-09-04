@@ -148,7 +148,7 @@ jobs:
 
       - name: Deploy to AKS using Helm
         run: |
-          helm upgrade --install myapp ./helm/myapp --set image.repository=${{ secrets.ACR_LOGIN_SERVER }}/my-azure-app --set image.tag=latest2  
+          helm upgrade --install my ./helm/mydemoapp --set image.repository=${{ secrets.ACR_LOGIN_SERVER }}/mydemoapp --set image.tag=latest3  
     
 
         
