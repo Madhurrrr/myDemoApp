@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "myDemoApp.name" . }}
+  labels:
+    app: {{ include "myDemoApp.name" . }}
+spec:
+  replicas: {{ .Values.replicaCount }}
+  selector:
+    matchLabels:
+      app: {{ include "myDemoApp.name" . }}
+  template:
+    metadata:
+      labels:
+        app: {{ include "myDemoApp.name" . }}
+    spec:
+      containers:
+      - name: {{ .Chart.Name }}
+        image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+        imagePullSecrets:
+          - name: my-dockerhub-secret
+        ports:
+        - containerPort: 8080

@@ -132,3 +132,25 @@ jobs:
       - name: Push Docker Image
         run: docker push ${{ secrets.ACR_LOGIN_SERVER }}/mydemoapp:latest3
 
+      - name: Set up kubectl
+        uses: azure/setup-kubectl@v1
+        with:
+          version: 'latest'
+
+      - name: Set up Helm
+        uses: azure/setup-helm@v1
+        with:
+          version: 'latest'
+
+      - name: Get AKS credentials
+        run: |
+          az aks get-credentials --resource-group aks-resource-group2 --name aks-cluster-93
+
+      - name: Deploy to AKS using Helm
+        run: |
+          helm upgrade --install myapp ./helm/myapp --set image.repository=${{ secrets.ACR_LOGIN_SERVER }}/my-azure-app --set image.tag=latest2  
+    
+
+        
+        
+
