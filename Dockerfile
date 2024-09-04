@@ -11,4 +11,4 @@ COPY target/myDemoApp-0.0.1-SNAPSHOT.jar /app/myDemoApp.jar
 EXPOSE 8080
 
 # Run the application
-CMD ["java", "-jar", "myapp.jar"]
+CMD ["java", "-jar", "myDemoApp.jar"]
