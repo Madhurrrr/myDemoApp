@@ -1,0 +1,7 @@
+image:
+  repository: "mydemoapp/latest3"
+  tag: "latest"
+
+service:
+  type: LoadBalancer
+  port: 8080
