@@ -1,3 +1,3 @@
-{{- define "myDemoApp.name" -}}
+{{- define "mydemoapp.name" -}}
 {{ .Release.Name }}
 {{- end -}}
